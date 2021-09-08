@@ -3,5 +3,5 @@ The site is built with NextJS, TailwindCss to publish my profile as well as blog
 
 ## Deploy
 - Deploy automatically with Vercel
-- Live at https://ducta.vercel.app/
+- Live at https://tmduc.com/
 
