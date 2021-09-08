@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="container mx-auto relative mt-5 lg:px-40">
+        <div className="container mx-auto relative pt-5 lg:px-40">
           <div className="text-center">
             <h2 className='text-white text-2xl my-8 font-medium sm:text-4xl'>Familiar with</h2>
             <Carousel responsive={responsive} renderDotsOutside ssr infinite>
@@ -62,6 +62,12 @@ export default function Home() {
               <Image className='card-img' src="/images/spring.jpg" height='100' width='100' alt="spring boot" />
             </Carousel>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="container mx-auto relative pt-5 lg:px-40 text-center">
+          <h2 className='text-white text-2xl my-8 font-medium sm:text-4xl'>The site is under development and will be finished soon...</h2>
+          <p className='text-white text-xl'>The source code can be found at <a className='text-yellow' href="https://github.com/tminhduc2811/me-myself-n-i">HERE</a> </p>
         </div>
       </section>
     </>
