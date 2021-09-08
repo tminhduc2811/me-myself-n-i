@@ -4,6 +4,16 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    colors: {
+      black: '#000814',
+      'dark-blue': '#03071e',
+      yellow: '#fca311',
+      grey: '#d3d3d3',
+      white: '#ffffff'
+    },
+    fontFamily: {
+      'default': ['Source Code Pro']
+    }
   },
   variants: {
     extend: {},
