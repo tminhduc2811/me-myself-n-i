@@ -36,7 +36,7 @@ export default function Home() {
         <div className="container mx-auto relative pt-5 lg:px-40">
           <div className="text-center">
             <h2 className='text-white text-2xl my-8 font-medium sm:text-4xl'>Familiar with</h2>
-            <Carousel responsive={responsive} renderDotsOutside ssr infinite>
+            <Carousel responsive={responsive} renderDotsOutside ssr>
               <Image className='card-img' src="/images/js.png" height='100' width='100' alt="javascript" />
               <Image className='card-img' src="/images/ts.png" height='100' width='100' alt="typescript" />
               <Image className='card-img' src="/images/go.png" height='100' width='100' alt="golang" />
