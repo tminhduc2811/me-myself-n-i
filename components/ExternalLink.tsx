@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-const ExternalLink = ({ children, href, className }) => {
+const ExternalLink = ({ children, href, className, ...others }) => {
   return (
-    <a href={href} className={className} target="_blank">{children}</a>
+    <a href={href} className={className} target="_blank" {...others}>{children}</a>
   )
 }
 

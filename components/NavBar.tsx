@@ -9,7 +9,9 @@ const NavBar = () => {
         <nav className="flex flex-col justify-between sm:flex-row">
           <div className="flex justify-center px-2 py-4 font-semibold">
             <Link href='/'>
-              <Image width="30" height="30" className="rounded-full cursor-pointer" src="/images/bigbro.png" alt="avatar" />
+              <span>
+                <Image width="30" height="30" className="rounded-full cursor-pointer" src="/images/bigbro.png" alt="avatar" />
+              </span>
             </Link>
             <div className="flex flex-col py-4 px-4 text-yellow text-xl h-8 justify-center">
               ducta
