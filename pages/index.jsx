@@ -1,5 +1,6 @@
 import Carousel from 'react-multi-carousel'
 import Image from "next/image"
+import ExternalLink from '../components/ExternalLink'
 
 const responsive = {
   desktop: {
@@ -21,24 +22,7 @@ const responsive = {
 
 export default function Home() {
   return (
-    <>
-      <header className="font-default">
-        <div className="container mx-auto px-5 lg:px-40">
-          <nav className="flex flex-col justify-between sm:flex-row">
-            <div className="flex justify-center px-2 py-4 font-semibold">
-              <Image width="30" height="30" className="rounded-full" src="/images/bigbro.png" alt="avatar" />
-              <div className="flex flex-col py-4 px-4 text-yellow text-xl h-8 justify-center">
-                ducta
-              </div>
-            </div>
-            <div className="flex justify-center font-semibold text-xl">
-              <a className="px-2 py-4 uppercase text-yellow transition-colors duration-150" href="#">home</a>
-              <a className="px-2 py-4 uppercase text-grey text-opacity-90 hover:text-white transition-colors duration-150" href="">blog</a>
-              <a className="px-2 py-4 uppercase text-grey text-opacity-90 hover:text-white transition-colors duration-150" href="">contact</a>
-            </div>
-          </nav>
-        </div>
-      </header>
+    <>      
       <section className="hero-section">
         <div className="container relative py-28 sm:py-36 mx-auto px-5 lg:px-40">
           <div className='lg:w-3/4 text-center sm:text-left'>
@@ -67,7 +51,9 @@ export default function Home() {
       <section>
         <div className="container mx-auto relative pt-5 lg:px-40 text-center">
           <h2 className='text-white text-2xl my-8 font-medium sm:text-4xl'>The site is under development and will be finished soon...</h2>
-          <p className='text-white text-xl'>The source code can be found at <a className='text-yellow' href="https://github.com/tminhduc2811/me-myself-n-i">HERE</a> </p>
+          <p className='text-white text-xl'>The source code can be found at
+          <ExternalLink className='pl-1 text-yellow' href="https://github.com/tminhduc2811/me-myself-n-i">HERE</ExternalLink> 
+          </p>
         </div>
       </section>
     </>
