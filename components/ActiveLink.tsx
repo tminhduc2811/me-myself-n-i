@@ -1,10 +1,11 @@
 import classnames from "classnames"
 import { useRouter } from "next/dist/client/router"
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
-const ActiveLink = ({ children, ...props }) => {
+const ActiveLink = ({ children, href, ...props }) => {
   const { asPath } = useRouter()
-  const isActive = asPath === props.href || asPath === props.as
+  const isActive = asPath === href || asPath === props.as
   const classNames = classnames(
     'px-2 py-4 uppercase transition-colors duration-150',
     {
@@ -13,10 +14,15 @@ const ActiveLink = ({ children, ...props }) => {
     }
   )
   return (
-    <Link {...props} passHref>
+    <Link href={href} passHref>
       <a className={classNames}>{children}</a>
     </Link>
   )
+}
+
+ActiveLink.propTypes = {
+  children: PropTypes.any,
+  href: PropTypes.string.isRequired
 }
 
 export default ActiveLink
