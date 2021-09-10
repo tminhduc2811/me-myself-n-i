@@ -1,6 +1,7 @@
 import Carousel from 'react-multi-carousel'
 import Image from "next/image"
 import ExternalLink from '../components/ExternalLink'
+import { SocialIcon } from 'react-social-icons'
 
 const responsive = {
   desktop: {
@@ -46,30 +47,26 @@ const HomePage = () => {
           </Carousel>
         </div>
       </section>
-      <section className='container mx-auto pt-5 lg:px-40 text-center'>
-        <h2 className='text-white text-2xl mt-8 font-medium sm:text-4xl'>What I do</h2>
-        <div className="md:flex">
-          <div>
-            <Image src='/images/website-illustration.svg' width='440' height='300' />
-          </div>
-          <div className="flex-1 w-full md:text-left md:py-20">
-            <p className="text-white text-lg p-3 md:text-xl">Well, mostly everything related to <span className='text-yellow'>Web Development</span>. Btw, I'm usually open for freelance, remote, or part-time jobs, so don't hesitate to contact me if you're interested in my work.</p>
+      <section className="hero-section-2 mt-16">
+        <div className='container mx-auto pt-1 lg:px-40 text-center'>
+          <h2 className='text-white text-2xl mt-8 font-medium sm:text-4xl'>What I do</h2>
+          <div className="md:flex">
+            <div>
+              <Image src='/images/website-illustration.svg' width='440' height='300' />
+            </div>
+            <div className="flex-1 w-full md:text-left md:py-20">
+              <p className="text-white text-lg p-3 md:text-xl">Well, mostly everything related to <span className='text-yellow'>Web Development</span>. Btw, I'm usually open for freelance, remote, or part-time jobs, so don't hesitate to contact me if you're interested in my work.</p>
+            </div>
           </div>
         </div>
       </section>
-      <section className='hero-section text-center pt-4 pb-16'>
+      <section className='text-center pt-4'>
         <h2 className='text-white text-2xl mt-8 font-medium sm:text-4xl'>Find me on</h2>
-        <div className="flex flex-wrap justify-center mt-2">
-        {/* <button className="bg-grey text-xl mt-5 px-5 py-2 rounded-xl hover:bg-yellow transition-colors duration-300">Github</button>
-        <button className="bg-grey text-xl mt-5 px-5 py-2 rounded-xl hover:bg-yellow transition-colors duration-300">LinkedIn</button> */}
-        </div>
-      </section>
-      <section>
-        <div className="container mx-auto relative pt-5 lg:px-40 text-center">
-          <h2 className='text-white text-2xl my-8 font-medium sm:text-4xl'>The site is under development and will be finished soon...</h2>
-          <p className='text-white text-xl'>The source code can be found at
-            <ExternalLink className='pl-1 text-yellow' href="https://github.com/tminhduc2811/me-myself-n-i" rel='nofollow'>HERE</ExternalLink>
-          </p>
+        <div className="flex flex-wrap justify-center mt-8">
+          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://github.com/tminhduc2811' title='Github' bgColor='white' />
+          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://www.linkedin.com/in/ducta2811/' title='LinkedIn' fgColor='white' />
+          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://twitter.com/ducta2811' title='Twitter' fgColor='white' />
+          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='mailto:tminhduc2811@gmail.com' title='Email' bgColor='white'/>
         </div>
       </section>
     </>

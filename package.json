@@ -11,7 +11,8 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-multi-carousel": "^2.6.5"
+    "react-multi-carousel": "^2.6.5",
+    "react-social-icons": "^5.6.1"
   },
   "devDependencies": {
     "@types/node": "^16.9.0",
