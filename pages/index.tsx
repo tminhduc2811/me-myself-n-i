@@ -51,7 +51,7 @@ const HomePage = () => {
         <div className='container mx-auto pt-1 lg:px-40 text-center'>
           <h2 className='text-white text-2xl mt-8 font-medium sm:text-4xl'>What I do</h2>
           <div className="md:flex">
-            <div>
+            <div className='h-full self-center'>
               <Image src='/images/website-illustration.svg' width='440' height='300' />
             </div>
             <div className="flex-1 w-full md:text-left md:py-20">
