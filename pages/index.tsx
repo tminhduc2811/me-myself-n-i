@@ -33,9 +33,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="container mx-auto pt-5 lg:px-40">
+      <section className="container mx-auto py-6 lg:px-40">
         <div className="text-center">
-          <h2 className='text-white text-2xl my-8 font-medium sm:text-4xl pb-5'>Familiar with</h2>
+          <h2 className='text-white text-2xl mb-8 font-medium sm:text-4xl pb-5'>Familiar with</h2>
           <Carousel responsive={responsive} renderDotsOutside ssr>
             <Image className='card-img' src="/images/js.png" height='100' width='100' alt="javascript" />
             <Image className='card-img' src="/images/ts.png" height='100' width='100' alt="typescript" />
@@ -47,7 +47,7 @@ const HomePage = () => {
           </Carousel>
         </div>
       </section>
-      <section className="hero-section-2 mt-16">
+      <section className="hero-section-2 mt-6">
         <div className='container mx-auto pt-1 lg:px-40 text-center'>
           <h2 className='text-white text-2xl mt-8 font-medium sm:text-4xl'>What I do</h2>
           <div className="md:flex">
@@ -60,8 +60,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className='text-center pt-4'>
-        <h2 className='text-white text-2xl mt-8 font-medium sm:text-4xl'>Find me on</h2>
+      <section className='text-center mt-6'>
+        <h2 className='text-white text-2xl font-medium sm:text-4xl'>Find me on</h2>
         <div className="flex flex-wrap justify-center mt-8">
           <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://github.com/tminhduc2811' title='Github' bgColor='white' />
           <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://www.linkedin.com/in/ducta2811/' title='LinkedIn' fgColor='white' />
