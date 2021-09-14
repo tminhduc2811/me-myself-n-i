@@ -1,25 +1,8 @@
 import Carousel from 'react-multi-carousel'
 import Image from "next/image"
-import ExternalLink from '../components/ExternalLink'
 import { SocialIcon } from 'react-social-icons'
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 6,
-    slidesToSlide: 6
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 4,
-    slidesToSlide: 4
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 3,
-    slidesToSlide: 3
-  }
-}
+import ImageList from '../components/ImageList'
+import { SKILL_IMAGES } from '../constants'
 
 const HomePage = () => {
   return (
@@ -36,15 +19,7 @@ const HomePage = () => {
       <section className="container mx-auto py-6 lg:px-40">
         <div className="text-center">
           <h2 className='text-white text-2xl mb-8 font-medium sm:text-4xl pb-5'>Familiar with</h2>
-          <Carousel responsive={responsive} renderDotsOutside ssr>
-            <Image className='card-img' src="/images/js.png" height='100' width='100' alt="javascript" />
-            <Image className='card-img' src="/images/ts.png" height='100' width='100' alt="typescript" />
-            <Image className='card-img' src="/images/go.png" height='100' width='100' alt="golang" />
-            <Image className='card-img' src="/images/java.png" height='100' width='100' alt="java" />
-            <Image className='card-img' src="/images/react.png" height='100' width='100' alt="reactjs" />
-            <Image className='card-img' src="/images/vue.png" height='100' width='100' alt="vuejs" />
-            <Image className='card-img' src="/images/spring.jpg" height='100' width='100' alt="spring boot" />
-          </Carousel>
+          <ImageList imgClassName='card-img' images={SKILL_IMAGES} />
         </div>
       </section>
       <section className="hero-section-2 mt-6">
@@ -66,7 +41,7 @@ const HomePage = () => {
           <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://github.com/tminhduc2811' title='Github' bgColor='white' />
           <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://www.linkedin.com/in/ducta2811/' title='LinkedIn' fgColor='white' />
           <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://twitter.com/ducta2811' title='Twitter' fgColor='white' />
-          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='mailto:tminhduc2811@gmail.com' title='Email' bgColor='white'/>
+          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='mailto:tminhduc2811@gmail.com' title='Email' bgColor='white' />
         </div>
       </section>
     </>
