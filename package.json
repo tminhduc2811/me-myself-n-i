@@ -6,13 +6,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/react-syntax-highlighter": "^13.5.2",
     "classnames": "^2.3.1",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-markdown": "^7.0.1",
     "react-multi-carousel": "^2.6.5",
-    "react-social-icons": "^5.6.1"
+    "react-social-icons": "^5.6.1",
+    "react-syntax-highlighter": "^15.4.4",
+    "rehype-raw": "^6.1.0",
+    "remark-gfm": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.9.0",
