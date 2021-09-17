@@ -1,9 +1,11 @@
+---
+title: React Cheatsheet and Use Cases
+description: Including basic and advanced React features, design patterns.
+author: Duc Ta
+image: https://tmduc.com/images/react-cheat-sheet.jpg
+---
+
 # React cheat sheet
-
-<div class='text-center'>
-  <img src='/images/under-construction.png' width='720' height='300'/>
-</div>
-
 
 ### Hooks
 

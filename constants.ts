@@ -68,7 +68,10 @@ const SKILL_IMAGES = [
   }
 ]
 
+const POSTS_PATH = 'posts'
+
 export {
   CAROUSEL_RESPONSIVE,
-  SKILL_IMAGES
+  SKILL_IMAGES,
+  POSTS_PATH
 }
