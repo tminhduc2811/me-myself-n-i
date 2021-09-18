@@ -7,7 +7,7 @@ import BurgerButton from "./BurgerButton"
 const NavBar = () => {
 
   const [isActive, setActive] = useState(false)
-  const [navState, setNavState] = useState('')
+  const [navState, setNavState] = useState('absolute')
 
   const handleScroll = () => {
     const offset = window.pageYOffset
@@ -16,7 +16,7 @@ const NavBar = () => {
     } else if (offset < 180 && offset > 120 && navState !== 'sticky') {
       setNavState('sticky')
     } else if (offset < 110 && navState !== '') {
-      setNavState('')
+      setNavState('absolute')
     }
   }
 
