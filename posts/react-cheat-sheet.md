@@ -1,8 +1,8 @@
 ---
 title: React Cheatsheet and Use Cases
-description: Including basic and advanced React features, design patterns.
+description: Memorizing every syntax and semantics is difficult in programming. This cheatsheet is to help you understand and list all major concepts, features of React. Including code snippets and real world examples.
 author: Duc Ta
-image: https://tmduc.com/images/react-cheat-sheet.jpg
+image: /images/react-cheat-sheet.jpg
 ---
 
 # React cheat sheet
