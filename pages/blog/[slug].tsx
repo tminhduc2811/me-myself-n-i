@@ -35,12 +35,12 @@ export const getStaticProps = async ({ params }) => {
     'utf-8'
   )
 
-  const parsedMarkdown = matter(markdown)
+  const { data, content } = matter(markdown)
 
   return {
     props: {
-      meta: parsedMarkdown.data,
-      content: parsedMarkdown.content,
+      meta: data,
+      content: content,
     }
   }
 }
