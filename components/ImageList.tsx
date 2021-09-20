@@ -3,12 +3,23 @@ import Image from 'next/image'
 import Carousel from 'react-multi-carousel'
 import { CAROUSEL_RESPONSIVE } from '../constants'
 
-const ImageList = ({ images, imgClassName }) => {
+interface ImageProps {
+  src: string
+  width: string
+  height: string
+  alt: string
+  priority?: boolean
+}
+
+const ImageList = (props) => {
+  const images: ImageProps[] = props.images
+  const { imgClassName } = props
+  
   return (
     <Carousel responsive={CAROUSEL_RESPONSIVE} renderDotsOutside ssr>
-      {images.map((image, index) => <Image key={index} className={imgClassName} {...image} />)}
+      {images.map((image, index) => <Image key={index} className={imgClassName} {...image} alt={image.alt} />)}
     </Carousel>
-    
+
   )
 }
 

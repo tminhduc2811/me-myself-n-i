@@ -1,0 +1,11 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": ["@typescript-eslint", "react-hooks", "react"],
+  "rules": {
+    "no-var":"error",
+    "object-shorthand": ["error", "always", { "avoidQuotes": true }],
+    "prefer-const": ["error", { "ignoreReadBeforeAssign": true }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

@@ -19,8 +19,9 @@ const PostContent = ({ content }) => {
               <SyntaxHighlighter
                 style={dracula}
                 language={language}
-                children={children[0]}
-              />
+              >
+                {children[0]}
+              </SyntaxHighlighter>
             )
           },
           img: (img) => {

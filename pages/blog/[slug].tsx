@@ -40,7 +40,7 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       meta: data,
-      content: content,
+      content
     }
   }
 }

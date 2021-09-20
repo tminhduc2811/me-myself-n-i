@@ -44,10 +44,10 @@ const NavBar = () => {
             <div className="flex justify-center px-2 py-4 font-semibold">
               <div className="flex justify-between w-full">
                 <div className="flex">
-                  <Link href='/'>
-                    <span>
+                  <Link href='/' passHref>
+                    <a>
                       <Image width="30" height="30" className="rounded-full cursor-pointer" src="/images/bigbro.png" alt="avatar" />
-                    </span>
+                    </a>
                   </Link>
                   <Link href='/'>
                     <a className="flex flex-col py-4 px-4 text-yellow text-xl h-8 justify-center">ducta</a>
