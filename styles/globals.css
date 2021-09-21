@@ -74,9 +74,9 @@
     @apply rounded-2xl mx-auto;
   }
   .article {
-    @apply container mx-auto text-grey px-5 leading-relaxed md:px-40;    
+    @apply container mx-auto text-grey px-5 mt-5 leading-normal md:leading-relaxed md:px-40;    
   }
   .article ul {
-    @apply list-disc list-inside pl-2 my-5;
+    @apply list-disc list-inside pl-2 my-4;
   }
 }

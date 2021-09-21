@@ -5,6 +5,10 @@ author: Duc Ta
 image: /images/react-cheat-sheet.jpg
 ---
 
+# React Cheatsheet and Use Cases
+
+Memorizing every syntax and semantics is difficult in programming. This cheatsheet is to help you understand and list all major concepts, features of React. Including code snippets and real world examples.
+
 ## Hooks
 
 Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
