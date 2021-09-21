@@ -1,13 +1,11 @@
 ---
-title: React Cheatsheet and Use Cases
+title: React Cheatsheet
 description: Memorizing every syntax and semantics is difficult in programming. This cheatsheet is to help you understand and list all major concepts, features of React. Including code snippets and real world examples.
 author: Duc Ta
 image: /images/react-cheat-sheet.jpg
 ---
 
-# React Cheatsheet and Use Cases
-
-Memorizing every syntax and semantics is difficult in programming. This cheatsheet is to help you understand and list all major concepts, features of React. Including code snippets and real world examples.
+## Table of Contents
 
 ## Hooks
 

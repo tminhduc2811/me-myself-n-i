@@ -5,6 +5,7 @@
 @layer base {
   html {
     @apply bg-black;
+    scroll-behavior: smooth;
   }
 
   h1 {
@@ -77,6 +78,14 @@
     @apply container mx-auto text-grey px-5 mt-5 leading-normal md:leading-relaxed md:px-40;    
   }
   .article ul {
-    @apply list-disc list-inside pl-2 my-4;
+    @apply block list-disc pt-0;
+    margin-block-start: .3rem;
+    margin-block-end: .3rem;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 25px;
+  }
+  .article a {
+    @apply text-link hover:text-yellow duration-300;
   }
 }

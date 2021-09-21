@@ -9,7 +9,8 @@ module.exports = {
       'dark-blue': '#03071e',
       yellow: '#fca311',
       grey: '#d3d3d3',
-      white: '#ffffff'
+      white: '#ffffff',
+      link: '#8ecae6'
     },
     fontFamily: {
       'default': ['Source Code Pro']

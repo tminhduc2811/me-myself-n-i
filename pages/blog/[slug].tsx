@@ -22,7 +22,7 @@ const PostDetails = ({ content, meta }) => {
           }]
         }}
       />
-      <PostContent content={content} />
+      <PostContent meta={meta} content={content} />
     </>
   )
 }
