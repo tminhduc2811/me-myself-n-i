@@ -5,16 +5,20 @@ author: Duc Ta
 image: /images/react-cheat-sheet.jpg
 ---
 
-# React cheat sheet
+## Hooks
 
-### Hooks
+Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
 
-#### UseState
+### UseState
+
+This is a very basic hook to create a state in your functional component
+
 ```jsx
 const [state, setState] = useState(initialStateValue)
 ```
+
 * initialStateValue can be string, number, object, etc.
-* setState is a function to set value for `state`
+* setState is a function to set value for state
 
 You can initialize state from a function
 
@@ -25,9 +29,11 @@ const [token] = useState(() => {
 })
 ```
 
-#### UseEffect
+### UseEffect
 
-Basic side effect, this will be triggerd on every render
+* Basic side effect, this will be triggerd on every rendered
+* Think of <span class="text-yellow">useEffect</span> as React class lifecycle methods such as componentDidMount, componentDidUpdate, componentWillUnmount combined.
+* Data fetching, setting up subscriptions and changing the DOM in React are basically called <span class="text-yellow">"side effects"</span>.
 
 ```jsx
 useEffect(() => {
@@ -75,25 +81,170 @@ useEffect(() => {
 }, [])
 ```
 
-#### UseContext
-TODO: Add useContext examples 
+### UseContext
 
-#### UseReducer
-TODO: Add useReducer examples
+* <span class="text-yellow">Context</span> is a way to handle shared data between components in React.
+* <span class="text-yellow">useContext</span> has a simpler API compared to the <span class="text-yellow">Consumer</span> of the context
 
-#### UseCallback
-TODO: Add useCallback examples
+```jsx
+// context with Consumer
+const UserContext = createContext("Duc Ta")
 
-#### UseMemo
-TODO: Add useMemo examples
+const UserProfile = () => {
+  return (
+    <UserContext.Consumer>
+      {user => <span>{`The username is ${user}`}</span>}
+    </UserContext.Consumer>
+  )
+}
+// context with the useContext hook
+const OtherComponent = () => {
+  // by using this hook, we don't need to rely on the Consumer
+  const user = useContext(UserContext)
+  return (
+    <span>The user is {user}</span>
+  )
+}
+```
 
-#### UseRef
-TODO: Add useRef examples
+### UseReducer
 
+* <span class="text-yellow">useReducer</span> is an alternative to <span class="text-yellow">useState</span>.
+* This hooks is a good way to handle state when you have a complex state logic
 
-### Custom Hooks
+```jsx
+const authState = { user: '', authenticated: false }
 
-#### UseFetch
+const reducer = (state, action) => {
+  switch(action.type) {
+    case "LOGGED_IN":
+      return { user: action.payload.user, authenticated: true }
+    case "LOGGED_OUT":
+      return { user: '', authenticated: false }
+    default:
+      return state
+  }
+}
+
+const App = () => {
+  const [authState, dispatch] = useReducer(reducer, authState)
+
+  const login = () => {
+    // handle the login function and dispatch the result
+    dispatch({ type: "LOGGED_IN", payload: { user: 'Duc Ta' } })
+  }
+
+  const logout = () => {
+    dispatch({ type: "LOGGED_OUT" })
+  }
+  return (
+    <>
+      <UserForm />
+      {
+        authState.authenticated ? <button onClick={logout}>Logout</button> : <button onClick={login}>Login</button>
+      }
+    </>
+  )
+}
+```
+
+### UseCallback
+
+* <span class="text-yellow">useCallback</span> returns a memoized callback.
+* Why useCallback? Basically, when a component is re-rendered, all its instances of functions and constants inside of it will be re-created, and this is redudant. Imagine if we have a large number of functions, this would cause performance issues for your application. Therefore, <span class="text-yellow">useCallback</span> helps resolve these issues.
+
+```jsx
+const YourComponent = () => {
+  
+  // This function will be re-created every render
+  const functionA = () => {
+    console.log('This function will be re-created every render')
+  }
+
+  /*
+  * This function will be created only once
+  * useCallback will memoize the function that we pass to it
+  */
+  const functionB = useCallback(() => console.log('This function will be created only once'))
+}
+```
+
+You can also pass an array of dependencies to the hook, this will help re-create the function whenever the dependencies change
+
+```jsx
+const [state, setState] = useState(...)
+// this function will be recreated whenever state changes
+const yourFunction = useCallback(() => {
+  // your function here
+}, [state])
+```
+
+### UseMemo
+
+* <span class="text-yellow">useMemo</span> returns a memoized value.
+* This hook is quite similar to <span class="text-yellow">useCallback</span>. Though it remembers the result from your function instead of the actual function like <span class="text-yellow">useCallback</span>.
+* This is great when you have some functions that need a lot of computing resources
+
+```jsx
+// a complex component with a lot of computing
+const ComplexComponent = () => {
+  const [value, setValue] = useState(null)
+  const [anotherValue, setAnotherValue] = useState(null)
+
+  const calcValue = () => {
+    /*
+    * This is where you do all the logic of calculating the value
+    * Eg: this function take seconds to perform
+    */
+   const calcValue = ...
+   return calcValue
+  }
+
+  // This will re-calculate whenever the value changes, anotherValue will not impact to this
+  const calculatedValue = useMemo(() => calcValue(), [value])
+
+  return (
+    <>
+      <span>Current value is: ${calculatedValue}</span>
+      <span>Another value is: ${anotherValue}</span>
+    </>
+  )
+}
+
+```
+
+### UseRef
+
+* This hooks returns a 'ref' object
+* Value is persisted by the <span class="text-yellow">.current</span> property
+
+```jsx
+const SearchBox = () => {
+  const [query, setQuery] = useState('')
+  
+  const searchInput = useRef(null)
+
+  const handleChange = (e) => {
+    setQuery(e.target.value)
+  }
+
+  const clearSearchQuery = () => {
+    // clear the search input
+    searchInput.current.value = ''
+    
+    searchInput.current.focus()
+  }
+
+  return (
+    <input type='text' onChange={handleChange} ref={searchInput} />
+  )
+}
+```
+
+## Custom Hooks
+
+### UseFetch
+
 ```jsx
 import { useEffect, useState } from "react"
 
@@ -115,7 +266,7 @@ export const useFetch = url => {
 }
 ```
 
-#### UseLocalStorage
+### UseLocalStorage
 
 Note: This won't work for SSR
 
@@ -137,6 +288,8 @@ const useLocalStorage = (defaultVal, key) => {
 
 export default useLocalStorage
 ```
-### To Read
+
+## To Read
+
 * [Clean Architecture on Frontend](https://dev.to/bespoyasov/clean-architecture-on-frontend-4311)
-* https://github.com/alex83130/advanced-react-patterns
+* <https://github.com/alex83130/advanced-react-patterns>
