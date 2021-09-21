@@ -5,16 +5,13 @@ import { CAROUSEL_RESPONSIVE } from '../constants'
 
 interface ImageProps {
   src: string
-  width: string
-  height: string
+  width: number
+  height: number
   alt: string
   priority?: boolean
 }
 
-const ImageList = (props) => {
-  const images: ImageProps[] = props.images
-  const { imgClassName } = props
-  
+const ImageList = ({ images, imgClassName }: { images: ImageProps[], imgClassName?: string }) => {
   return (
     <Carousel responsive={CAROUSEL_RESPONSIVE} renderDotsOutside ssr>
       {images.map((image, index) => <Image key={index} className={imgClassName} {...image} alt={image.alt} />)}
