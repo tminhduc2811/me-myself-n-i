@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export interface PostInterface {
   image: string
-  base64: string
+  blurDataURL: string
   href: string
   title: string
   description: string
@@ -12,13 +12,13 @@ export interface PostInterface {
 
 const Post = ({ meta }) => {
 
-  const { href, title, description, image, base64 } = meta
+  const { href, title, description, image, blurDataURL } = meta
 
   return (
     <div className="flex flex-col bg-[#151A22] rounded-xl shadow-xl mt-4 mx-2 hover:bg-[#212529] transition-colors duration-300 lg:flex-row overflow-hidden">
       <Link href={href} passHref>
         <a className="h-52 w-auto lg:w-4/5 xl:w-1/3 lg:h-auto relative">
-          <Image className='inset-0 object-cover object-center' src={image} alt={title} layout='fill' placeholder='blur' blurDataURL={base64} />
+          <Image className='inset-0 object-cover object-center' src={image} alt={title} layout='fill' placeholder='blur' blurDataURL={blurDataURL} />
         </a>
       </Link>
       <div className="w-full py-4 px-3 text-grey flex flex-col justify-between ">

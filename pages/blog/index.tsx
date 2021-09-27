@@ -21,38 +21,29 @@ const PostsPage = ({ blogs }) => {
 export const getStaticProps = async () => {
 
   // get all .md files
-  const blogs = fs.readdirSync(POSTS_PATH)
-    .map(fileName => {
-      const markdown = fs.readFileSync(
-        path.join(POSTS_PATH, fileName),
-        'utf-8'
-      )
+  const blogs = await Promise.all(
+    fs.readdirSync(POSTS_PATH)
+      .map(async fileName => {
+        const markdown = fs.readFileSync(
+          path.join(POSTS_PATH, fileName),
+          'utf-8'
+        )
 
-      const { data } = matter(markdown) as unknown as { data: PostInterface }
+        const { data } = matter(markdown) as unknown as { data: PostInterface }
 
-      // process images, generate blur data url
-      getPlaiceholder(
-        data.image,
-        { size: 10 }
-      ).then(({ base64 }) => {
-        data.base64 = base64
+        const { base64 } = await getPlaiceholder(
+          data.image,
+          { size: 10 }
+        )
+
+        return {
+          ...data,
+          blurDataURL: base64,
+          href: `/blog/${fileName.replace(/\.md?$/, '')}`
+        }
       })
-
-      return {
-        ...data,
-        href: `/blog/${fileName.replace(/\.md?$/, '')}`
-      }
-    })
-
-
-  blogs.forEach(async blog => {
-    const { base64 } = await getPlaiceholder(
-      blog.image,
-      { size: 10 }
-    )
-    blog.base64 = base64
-  })
-
+  )
+  console.log(blogs)
   return {
     props: {
       blogs
