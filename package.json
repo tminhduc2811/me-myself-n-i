@@ -12,6 +12,7 @@
     "gray-matter": "^4.0.3",
     "next": "latest",
     "next-seo": "^4.27.0",
+    "plaiceholder": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,7 +22,8 @@
     "react-syntax-highlighter": "^15.4.4",
     "rehype-raw": "^6.1.0",
     "remark-gfm": "^2.0.0",
-    "remark-toc": "^8.0.0"
+    "remark-toc": "^8.0.0",
+    "sharp": "^0.29.1"
   },
   "devDependencies": {
     "@types/node": "^16.9.0",
