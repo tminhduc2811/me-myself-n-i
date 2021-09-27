@@ -17,7 +17,7 @@ const HomePage = () => {
       </section>
       <section className="container mx-auto py-6 lg:px-40">
         <div className="text-center">
-          <h2 className='text-white text-2xl mb-8 font-medium sm:text-4xl pb-5'>Familiar with</h2>
+          <h2 className='text-white text-2xl mb-8 font-medium sm:text-4xl pb-5'>Skills</h2>
           <ImageList imgClassName='card-img' images={SKILL_IMAGES} />
         </div>
       </section>
