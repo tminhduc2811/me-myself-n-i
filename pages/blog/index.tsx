@@ -43,7 +43,7 @@ export const getStaticProps = async () => {
         }
       })
   )
-  console.log(blogs)
+  
   return {
     props: {
       blogs
