@@ -1,6 +1,6 @@
 ---
 title: React Cheatsheet
-description: Memorizing every syntax and semantics is difficult in programming. This cheatsheet is to help you understand and list all major concepts, features of React. Including code snippets and real world examples.
+description: Memorizing every syntax and semantics is difficult. This cheatsheet helps you understand all major concepts, features of React. Including code snippets and real world examples.
 author: Duc Ta
 image: /images/react-cheat-sheet.jpg
 ---
