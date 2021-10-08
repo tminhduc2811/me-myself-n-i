@@ -292,7 +292,7 @@ export default useLocalStorage
 ```
 
 ### useInterval
-`useInterval` hook allows you to pass in a call-back function which will be triggered after a specific amount of time. Specify `immediate = true` will trigger the function on the first time immediately.
+useInterval hook allows you to pass in a call-back function which will be triggered after a specific amount of time. Specify `immediate = true` will trigger the function on the first time immediately.
 
 ```jsx
 export const useInterval = (callback, interval, immediate) => {
