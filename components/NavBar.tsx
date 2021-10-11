@@ -9,7 +9,7 @@ const NavBar = () => {
   const [isActive, setActive] = useState(false)
   const [navState, setNavState] = useState('absolute')
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const offset = window.pageYOffset
     if (offset >= 180 && navState !== 'in-view') {
       setNavState('in-view')
@@ -18,7 +18,7 @@ const NavBar = () => {
     } else if (offset < 110 && navState !== '') {
       setNavState('absolute')
     }
-  }
+  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
