@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { SocialIcon } from 'react-social-icons'
 import ImageList from '../components/ImageList'
+import RoundedIcon from "../components/RoundedIcon"
 import { SKILL_IMAGES } from '../constants'
 
 const HomePage = () => {
@@ -37,10 +37,10 @@ const HomePage = () => {
       <section className='text-center mt-6'>
         <h2 className='text-white text-2xl font-medium sm:text-4xl'>Find me on</h2>
         <div className="flex flex-wrap justify-center mt-8">
-          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://github.com/tminhduc2811' title='Github' bgColor='white' />
-          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://www.linkedin.com/in/ducta2811/' title='LinkedIn' fgColor='white' />
-          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='https://twitter.com/ducta2811' title='Twitter' fgColor='white' />
-          <SocialIcon className='mx-4 hover:-translate-y-1 transition-all ease-in-out duration-300' url='mailto:tminhduc2811@gmail.com' title='Email' bgColor='white' />
+          <RoundedIcon url='https://github.com/tminhduc2811' title='Github' bgColor='white' />
+          <RoundedIcon url='https://www.linkedin.com/in/ducta2811/' title='LinkedIn' fgColor='white' />
+          <RoundedIcon url='https://twitter.com/ducta2811' title='Twitter' fgColor='white' />
+          <RoundedIcon url='mailto:tminhduc2811@gmail.com' title='Email' bgColor='white' />
         </div>
       </section>
     </>

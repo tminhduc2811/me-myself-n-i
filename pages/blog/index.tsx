@@ -1,7 +1,7 @@
 import { getPlaiceholder } from 'plaiceholder'
 import fs from 'fs'
 import path from 'path'
-import { POSTS_PATH } from '../../constants'
+import { MD_REGEX, POSTS_PATH } from '../../constants'
 import matter from 'gray-matter'
 import Post, { PostInterface } from '../../components/Post'
 
@@ -39,7 +39,7 @@ export const getStaticProps = async () => {
         return {
           ...data,
           blurDataURL: base64,
-          href: `/blog/${fileName.replace(/\.md?$/, '')}`
+          href: `/blog/${fileName.replace(MD_REGEX, '')}`
         }
       })
   )

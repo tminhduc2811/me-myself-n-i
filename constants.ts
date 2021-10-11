@@ -70,8 +70,11 @@ const SKILL_IMAGES = [
 
 const POSTS_PATH = 'posts'
 
+const MD_REGEX = /\.md?$/
+
 export {
   CAROUSEL_RESPONSIVE,
   SKILL_IMAGES,
-  POSTS_PATH
+  POSTS_PATH,
+  MD_REGEX
 }

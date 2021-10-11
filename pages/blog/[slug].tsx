@@ -1,7 +1,7 @@
 import PostContent from "../../components/PostContent"
 import fs from 'fs'
 import path from "path"
-import { POSTS_PATH } from "../../constants"
+import { MD_REGEX, POSTS_PATH } from "../../constants"
 import matter from 'gray-matter'
 import { NextSeo } from 'next-seo'
 
@@ -47,7 +47,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const paths = fs.readdirSync(POSTS_PATH)
-    .map(path => path.replace(/\.md?$/, ''))
+    .map(path => path.replace(MD_REGEX, ''))
     .map(slug => ({ params: { slug } }))
 
   return { paths, fallback: false }
