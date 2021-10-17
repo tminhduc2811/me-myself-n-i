@@ -18,7 +18,7 @@ const NavBar = () => {
     } else if (offset < 110 && navState !== '') {
       setNavState('absolute')
     }
-  }, [])
+  }, [navState])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
